@@ -10,7 +10,7 @@ class Enemy:
         self.x=random.randint(self.size,800-self.size)
         self.y=random.randint(self.size,600-self.size)
         self.image = pygame.transform.scale(self.original_image, (size*2,size*2))
-        self.speed = random.randint(1,5)
+        self.speed = 1
         self.blood=blood
         self.last_attack_time = 0
         self.attack_interval = 1000  # 攻击间隔（毫秒）
