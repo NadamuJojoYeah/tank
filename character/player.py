@@ -20,6 +20,8 @@ class Player:
     def get_pos(self):
         return self.x, self.y
 
+    def get_angle(self):
+        return self.angle
 
     def rotate_towards_mouse(self):
         mx, my = pygame.mouse.get_pos()

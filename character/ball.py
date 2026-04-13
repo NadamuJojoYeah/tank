@@ -1,16 +1,16 @@
 import pygame
 import math
 class Ball:
-    def __init__(self, x, y, target_x, target_y, radius=5, speed=8):
+    def __init__(self, x, y, target_x, target_y,angle, radius=5, speed=8):
         self.x = x
         self.y = y
         self.radius = radius
         self.image=pygame.image.load("image/bullet_image/bullet_1.png").convert_alpha()
-        self.angle=0
         dx = target_x - x
         dy = target_y - y
         distance = math.sqrt(dx ** 2 + dy ** 2)
-
+        self.angle=0
+        self.angle = angle
         if distance > 0:
             self.speedX = (dx / distance) * speed
             self.speedY = (dy / distance) * speed
@@ -33,10 +33,9 @@ class Ball:
 
     def get_pos(self):
         return self.x, self.y
-
-    def move_rowards_play(self):
-        mx,my=pygame.mouse.get_pos()
-        dx=my-self.x
-        dy=my-self.y
-        self.angle=math.degrees(math.atan2(-dy,dx))-90
-#
+    #
+    # def move_rowards_play(self):
+    #     mx, my = pygame.mouse.get_pos()
+    #     dx = my - self.x
+    #     dy = my - self.y
+    #     self.angle = math.degrees(math.atan2(-dy, dx)) - 90

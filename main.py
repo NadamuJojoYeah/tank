@@ -27,7 +27,8 @@ def main():
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 px, py = player1.get_pos()
                 mx, my = pygame.mouse.get_pos()
-                balls.append(ball.Ball(px, py, mx, my))
+                angle= player.get_angle()
+                balls.append(ball.Ball(px, py, mx, my,angle))
         # 填充背景颜色
         screen.fill((0, 128, 0))
         # 获取按键元组
@@ -41,7 +42,7 @@ def main():
 
         # 遍历小球
         for b in balls[:]:
-            b.move_rowards_play()
+            # b.move_rowards_play()
             b.move()
             b.draw(screen)
             dx = b.x - enemy1.x
