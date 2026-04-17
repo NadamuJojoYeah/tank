@@ -16,6 +16,7 @@ class Enemy:
         self.blood = blood
         self.last_attack_time = 0
         self.attack_interval = 1000
+        self.refresh_time=pygame.time.get_ticks() #最新改动
 
     def draw(self, screen):
         rotated_rect = self.image.get_rect(center=(self.x, self.y))
@@ -49,6 +50,7 @@ class Enemy:
     def attack(self, damage):
         self.blood -= damage
         if self.blood <= 0:
+            self.refresh_time=pygame.time.get_ticks() #改动
             return True
         return False
 

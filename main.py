@@ -5,7 +5,6 @@ from character import enemy
 import time
 import os
 
-
 def main():
     os.chdir(os.path.dirname(os.path.abspath(__file__)))
     pygame.init()
@@ -27,7 +26,7 @@ def main():
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 px, py = player1.get_pos()
                 mx, my = pygame.mouse.get_pos()
-                angle= player.get_angle()
+                angle= player1.get_angle()
                 balls.append(ball.Ball(px, py, mx, my,angle))
         # 填充背景颜色
         screen.fill((0, 128, 0))
@@ -42,7 +41,6 @@ def main():
 
         # 遍历小球
         for b in balls[:]:
-            # b.move_rowards_play()
             b.move()
             b.draw(screen)
             dx = b.x - enemy1.x
@@ -51,7 +49,9 @@ def main():
             if distance < (b.radius + enemy1.size):
                 if enemy1.attack(1):
                     # time.sleep(1)
-                    enemy1 = enemy.Enemy("image/tank_image/tank_1.png", 20, 10)
+                    now_time=pygame.time.get_ticks()
+                    if now_time-enemy1.refresh_time>1000:  #最新改动
+                        enemy1 = enemy.Enemy("image/tank_image/tank_1.png", 20, 10)
                 balls.remove(b)
                 continue
             if b.is_out_of_screen(800, 600):
