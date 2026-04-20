@@ -46,7 +46,7 @@ def conformlogin(*entries, root=None):
         root = tk.Tk()
         root.withdraw()  # 隐藏主窗口
         msgbox.showerror(
-            title="警告",
+            title="警告",警告nmxz2`
             message="输入的密码或用户名错误"
         )
 
