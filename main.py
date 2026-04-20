@@ -21,8 +21,7 @@ def main():
     # 建立敌人数组
 
     enemy1 = enemy.Enemy("image/tank_image/tank_1.png", 20, 10)
-    enemy2=enemy.Enemy("image/tank_image/tank_1.png", 20, 10)
-    list_enemy=[enemy1,enemy2]
+    list_enemy=[enemy1,enemy1]
 
     map_img=pygame.image.load(map_file).convert()
     map_img=pygame.transform.scale(map_img,(800,600))
