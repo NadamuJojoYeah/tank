@@ -18,7 +18,7 @@ def verify_user(*entries):
     if not username or not password:
         return False
 
-    filepath = r"C:\Users\星河\Desktop\模拟\data\users.json"
+    filepath = r"data\users.json"
 
     if not os.path.exists(filepath):
         return False
@@ -46,7 +46,7 @@ def conformlogin(*entries, root=None):
         root = tk.Tk()
         root.withdraw()  # 隐藏主窗口
         msgbox.showerror(
-            title="警告",警告nmxz2`
+            title="警告",
             message="输入的密码或用户名错误"
         )
 

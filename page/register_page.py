@@ -40,7 +40,7 @@ def register():
     def do_register():
         username = entry_user.get()
         password = entry_pwd.get()
-        filepath = r"C:\Users\星河\Desktop\模拟\data\users.json"
+        filepath = r"data\users.json"
         # os.makedirs(os.path.dirname(filepath), exist_ok=True)
         users = []
         if os.path.exists(filepath):
